@@ -1,0 +1,3 @@
+Unique_customer		Unique_chain	Unique_dept		Unique_category		Unique_company		Unique_brand
+
+311542			135		84			32774			837			35690
