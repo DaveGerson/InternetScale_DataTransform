@@ -45,7 +45,8 @@ create table winsored_customer_metrics as
 	SELECT
 		id  as unique_customer,
 		trip_measure.tripcounts as tripcounts,
-		avgSpend_measure.avgSpend as avgSpend,	
+		avgSpend_measure.avgSpend as avgSpend,
+		avg_itemcost_measure.avg_itemcostcounts as avg_itemcost
 	FROM 
 		sales_by_customer main
 			JOIN(
@@ -145,7 +146,7 @@ create table winsored_customer_metrics as
 					) avg_itemcost_bounds
 					where avg_itemcost_tile between 195 and 6
 				) avg_itemcost_measure
-			ON main.unique_customer = trip_measure.unique_customer
+			ON main.unique_customer = avg_itemcost_measure.unique_customer
 				
 	
 	
